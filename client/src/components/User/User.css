@@ -1,0 +1,33 @@
+.user{
+    padding-top: 10px;
+    margin-left: 50px;
+}
+
+.user__wrapper{
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.user__info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.user__text{
+    font-size: 20px;
+}
+
+.user__download{
+    max-width: 200px;
+    margin: 20px auto 0 auto;
+}
+
+.user__change{
+    margin-top: 20px;
+}
+
+.user__link{
+    color: #fff;
+}

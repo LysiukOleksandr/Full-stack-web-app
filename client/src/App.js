@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import LoginForm from "./components/LoginForm/LoginForm";
-import {Route, Redirect} from 'react-router-dom'
+import {Route, Redirect, Link} from 'react-router-dom'
 import Register from "./components/Register/Register";
 import Forgot from "./components/Forgot/Forgot";
 import Home from './components/Home/Home'
@@ -14,6 +14,7 @@ import {getUserData} from "./redux/actions/userActionsCreator";
 import User from "./components/User/User";
 import ProtectedRouter from "./ProtectedRouter";
 import ProtectedAuthRouter from "./ProtectedAuthRouter";
+import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
 
 function App() {
     const dispatch = useDispatch()
@@ -48,7 +49,6 @@ function App() {
             <div className="header">
                 <Header isAuth={state.user.isAuth} userPhoto={state.user.userPhoto}/>
             </div>
-
             <div className="router-group">
                 <Route exact path='/' render={() => <Home isAuth={state.user.isAuth} />}/>
                 <ProtectedAuthRouter exact path='/login' component={LoginForm} isAuth={state.user.isAuth} />
@@ -57,6 +57,7 @@ function App() {
                 <ProtectedAuthRouter path='/reset/:token' component={Reset} isAuth={state.user.isAuth} />
                 <ProtectedRouter exact path='/user' component={User} isAuth={state.user.isAuth}/>
                 <ProtectedRouter exact path='/user/change' component={UserChange} isAuth={state.user.isAuth}/>
+                <ProtectedRouter exact path='/article' component={ArticleDetails} isAuth={state.user.isAuth} />
             </div>
         </div>
     );

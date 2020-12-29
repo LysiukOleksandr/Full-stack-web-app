@@ -18,11 +18,10 @@ const Forgot = () => {
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value)
-
     }
 
     return (
-        <div>
+        <div className='forgot'>
             <h1>Recover Password</h1>
             <Form
                 name="normal_login"

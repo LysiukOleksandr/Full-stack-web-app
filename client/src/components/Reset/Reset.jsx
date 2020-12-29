@@ -10,7 +10,6 @@ const Reset = () => {
 
     const dispatch = useDispatch()
 
-
     const onFinish = () => {
         if (password === repeatPassword) {
             const resetToken = window.location.href.split('/')[window.location.href.split('/').length - 1]
@@ -33,7 +32,7 @@ const Reset = () => {
 
 
     return (
-        <div>
+        <div className='reset'>
             <h1 className='register-title'>Reset your password</h1>
             <Form
                 name="normal_login"

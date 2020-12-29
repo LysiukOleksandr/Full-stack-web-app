@@ -1,7 +1,10 @@
 import React from 'react'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import {Button, Modal} from "antd";
+import {Button, Input, Modal, Typography} from "antd";
+import './TextEditor.css'
+
+const {Title} = Typography
 
 const TextEditor = () =>{
 
@@ -23,6 +26,9 @@ const TextEditor = () =>{
                 onOk={handleCancel}
                 onCancel={handleCancel}
             >
+                <Title level={4}>Title</Title>
+                <Input className='editor__input' />
+                <Title level={4}>Description</Title>
                 <CKEditor
                     editor={ ClassicEditor }
                     data="<p>Hello from CKEditor 5!</p>"

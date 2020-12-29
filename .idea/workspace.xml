@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9dbc551-0795-4a9f-a7dc-900fd08acc30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/ProtectedAuthRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Article/Acticle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Article/Acticle.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Drawer/DrawerMenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Drawer/DrawerMenu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/ProtectedRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/ProtectedRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Drawer/Drawer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginForm/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/reducers/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/reducers/userReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -90,7 +79,7 @@
       <workItem from="1608755014672" duration="630000" />
       <workItem from="1609143954809" duration="20846000" />
       <workItem from="1609180493151" duration="4533000" />
-      <workItem from="1609231097929" duration="9162000" />
+      <workItem from="1609231097929" duration="11233000" />
     </task>
     <servers />
   </component>

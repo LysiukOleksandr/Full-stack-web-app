@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9dbc551-0795-4a9f-a7dc-900fd08acc30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/ArticleDetails/ArticleDetails.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/ArticleDetails/ArticleDetails.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Forgot/Forgot.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Forgot/Forgot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Forgot/Forgot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Forgot/Forgot.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/LoginForm/LoginForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginForm/LoginForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Register/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register/Register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Reset/Reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Reset/Reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Reset/Reset.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Reset/Reset.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/userRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +77,7 @@
       <workItem from="1609180493151" duration="4533000" />
       <workItem from="1609231097929" duration="13471000" />
       <workItem from="1609250227932" duration="2537000" />
-      <workItem from="1609265210821" duration="2645000" />
+      <workItem from="1609265210821" duration="3037000" />
     </task>
     <servers />
   </component>

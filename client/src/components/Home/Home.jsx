@@ -1,22 +1,16 @@
 import React from 'react'
-// import Drawer from '../Drawer/Drawer'
-import {useHistory} from 'react-router-dom'
+import DrawerMenu from '../Drawer/DrawerMenu'
+import Article from "../Article/Acticle";
 
 
-const Home = ({isAuth}) => {
-
-    const history = useHistory()
-
-    React.useEffect(()=>{
-        if(!isAuth){
-            history.push('/login')
-        }
-    },[isAuth])
+const Home = () => {
 
     return (
         <div className='home'>
-            <h1>Home page</h1>
-            {/*<Drawer/>*/}
+            <DrawerMenu/>
+            <div className="articles">
+            <Article />
+            </div>
         </div>
     )
 }

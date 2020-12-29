@@ -2,5 +2,10 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    padding-top: 70px;
+    padding-top: 10px;
+}
+
+.articles{
+    display: flex;
+    justify-content: center;
 }

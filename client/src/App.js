@@ -10,14 +10,12 @@ import Header from "./components/Header/Header";
 import UserChange from "./components/UserChange/UserChange";
 import {notification} from "antd";
 import {useDispatch, useSelector} from 'react-redux'
-import {useHistory} from 'react-router-dom'
-import {getUserData, setIsAuth, setUserData} from "./redux/actions/userActionsCreator";
+import {getUserData} from "./redux/actions/userActionsCreator";
 import User from "./components/User/User";
-import ProtectedRoute from "./ProtectedRoute";
-import axios from "axios";
+import ProtectedRouter from "./ProtectedRouter";
+import ProtectedAuthRouter from "./ProtectedAuthRouter";
 
 function App() {
-    const history = useHistory()
     const dispatch = useDispatch()
 
     const state = useSelector(({userReducer}) => userReducer)
@@ -29,9 +27,14 @@ function App() {
         });
     };
 
+    React.useEffect(()=>{
+        if(state.message && state.message.length > 1){
+            openNotification(state.message)
+        }
+    }, [state.message])
+
     React.useEffect(() => {
         const token = localStorage.getItem('jwt')
-        console.log('effect')
         if (token) {
             dispatch(getUserData())
         } else if (!token) {
@@ -47,26 +50,13 @@ function App() {
             </div>
 
             <div className="router-group">
-                <Route exact path='/login' render={() => <LoginForm isAuth={state.user.isAuth} />}/>
                 <Route exact path='/' render={() => <Home isAuth={state.user.isAuth} />}/>
-                <ProtectedRoute exact path='/user' component={User} isAuth={state.user.isAuth}/>
-                <ProtectedRoute exact path='/user/change' component={UserChange} isAuth={state.user.isAuth}/>
-                {/*{state.user.isAuth === true ?*/}
-                {/*    <>*/}
-                {/*        {console.log('login')}*/}
-                {/*        <Route exact path='/' render={() => <Home/>}/>*/}
-                {/*        <Route exact path='/user/change' render={() => <UserChange/>}/>*/}
-                {/*        <Route exact path='/user' render={() => <User/>}/>*/}
-                {/*    </>*/}
-                {/*    :*/}
-                {/*    <>*/}
-                {/*        {console.log('not')}*/}
-                {/*        <Route exact path='/login' render={() => <LoginForm/>}/>*/}
-                {/*        <Route exact path='/register' render={() => <Register/>}/>*/}
-                {/*        <Route exact path='/forgot' render={() => <Forgot/>}/>*/}
-                {/*        <Route path='/reset/:token' render={() => <Reset/>}/>*/}
-                {/*    </>*/}
-                {/*}*/}
+                <ProtectedAuthRouter exact path='/login' component={LoginForm} isAuth={state.user.isAuth} />
+                <ProtectedAuthRouter exact path='/forgot' component={Forgot} isAuth={state.user.isAuth} />
+                <ProtectedAuthRouter exact path='/register' component={Register} isAuth={state.user.isAuth} />
+                <ProtectedAuthRouter path='/reset/:token' component={Reset} isAuth={state.user.isAuth} />
+                <ProtectedRouter exact path='/user' component={User} isAuth={state.user.isAuth}/>
+                <ProtectedRouter exact path='/user/change' component={UserChange} isAuth={state.user.isAuth}/>
             </div>
         </div>
     );

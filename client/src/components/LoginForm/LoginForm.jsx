@@ -6,14 +6,12 @@ import {UserOutlined, LockOutlined} from '@ant-design/icons';
 import {Link} from "react-router-dom";
 import {loginUser} from '../../redux/actions/userActionsCreator'
 import {useDispatch} from 'react-redux'
-import {Redirect, useHistory} from 'react-router-dom'
 
-const LoginForm = ({isAuth}) => {
+const LoginForm = () => {
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
 
     const dispatch = useDispatch()
-    const history = useHistory()
 
     const onFinish = () => {
         dispatch(loginUser(email, password))
@@ -25,14 +23,6 @@ const LoginForm = ({isAuth}) => {
     const onChangePassword = (e) => {
         setPassword(e.target.value)
     }
-
-    React.useEffect(()=>{
-        if(isAuth){
-            console.log(isAuth)
-            history.push('/')
-        }
-
-    },[isAuth])
 
     return (
         <Form

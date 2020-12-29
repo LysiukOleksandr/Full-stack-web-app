@@ -22,7 +22,6 @@ const userReducer = (state = defaultState, action) => {
                 }
             }
         case 'SET_USER_DATA':
-            console.log(action.payload, 'asdasdasd')
             return {
                 ...state,
                 user: {...state.user, ...action.payload}

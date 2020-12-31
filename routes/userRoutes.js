@@ -19,22 +19,6 @@ const upload = multer({
     },
 })
 
-const articleStorage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './uploads/article/')
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + file.originalname)
-    }
-})
-
-const articleUpload = multer({
-    storage: storage,
-    limits: {
-        fileSize: 1024 * 1024 * 10
-    },
-})
-
 const router = express.Router()
 
 router.get('/', authController.protect, userController.getUser)

@@ -69,8 +69,6 @@ module.exports.downloadUserResume = async (req, res) => {
         const id = req.headers.id
         const {userResume} = await User.findOne({_id: id}).select('userResume')
             res.download(String(userResume))
-
-
     } catch (e) {
         res.status(400).json({
             message: 'Something went wrong. Please, try again.'

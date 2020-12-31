@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const authRoutes = require('./routes/authRoutes')
 const userRoutes = require('./routes/userRoutes')
+const articleRoutes = require('./routes/articleRoutes')
 const cors = require('cors')
 const morgan = require('morgan')
 
@@ -24,6 +25,7 @@ app.use(express.json())
 
 app.use('/auth', authRoutes)
 app.use('/user', userRoutes)
+app.use('/article', articleRoutes)
 
 mongoose.connect('mongodb+srv://oleksandr:oleksandr1@authapp.3wxyv.mongodb.net/oleksandr?retryWrites=true&w=majority', {
     useNewUrlParser: true,

@@ -56,7 +56,6 @@ const UserChange = () => {
     const onUploadUserPhoto = () => {
         const fd = new FormData()
         fd.append('userPhoto', selectedImg, selectedImg.name)
-
         dispatch(changeUserPhoto(fd))
         setSelectedImg(null)
     }

@@ -134,7 +134,6 @@ export const changeUserData = (user) => (dispatch) => {
 
 export const changeUserPhoto = (fd) => (dispatch) => {
     const token = localStorage.getItem('jwt')
-
     axios.post('http://localhost:8000/user/change/userPhoto', fd, {
         headers: {
             'Authorization': token

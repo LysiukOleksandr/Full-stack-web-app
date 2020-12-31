@@ -5,3 +5,15 @@
 .ck-editor__editable {
     min-height: 200px;
 }
+
+#editor__image{
+    opacity: 0;
+    margin-bottom: 5px;
+}
+
+.editor__image{
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 2px;
+}

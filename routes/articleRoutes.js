@@ -32,4 +32,5 @@ const upload = multer({
 })
 
 router.post('/', authController.protect, upload.single('articleImage'), articleController.uploadArticle)
+router.get('/', authController.protect, articleController.getArticles)
 module.exports = router

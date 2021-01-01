@@ -1,3 +1,5 @@
+import {SET_IS_AUTH, SET_MESSAGE, SET_USER_DATA} from "../actions/constants";
+
 const defaultState = {
     user: {
         isAuth: false,
@@ -13,7 +15,7 @@ const defaultState = {
 
 const userReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'SET_IS_AUTH':
+        case SET_IS_AUTH:
             return {
                 ...state,
                 user: {
@@ -21,12 +23,12 @@ const userReducer = (state = defaultState, action) => {
                     isAuth: action.payload
                 }
             }
-        case 'SET_USER_DATA':
+        case SET_USER_DATA:
             return {
                 ...state,
                 user: {...state.user, ...action.payload}
             }
-        case 'SET_MESSAGE':
+        case SET_MESSAGE:
             return {
                 ...state,
                 message: action.payload

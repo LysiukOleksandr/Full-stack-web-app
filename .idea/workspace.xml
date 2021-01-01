@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9dbc551-0795-4a9f-a7dc-900fd08acc30" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/ProtectedHomeRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/redux/actions/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Article/Acticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Article/Acticle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Drawer/DrawerMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Drawer/DrawerMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/actions/articleActionsCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/actions/articleActionsCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/actions/userActionsCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/actions/userActionsCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/reducers/articleReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/reducers/articleReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/reducers/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/reducers/userReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/articleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/articleController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/articleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/articleRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +94,10 @@
       <workItem from="1609265210821" duration="6549000" />
       <workItem from="1609317985636" duration="14961000" />
       <workItem from="1609358199492" duration="6282000" />
-      <workItem from="1609403643709" duration="3293000" />
+      <workItem from="1609403643709" duration="4168000" />
+      <workItem from="1609446368101" duration="2697000" />
+      <workItem from="1609506607488" duration="12000" />
+      <workItem from="1609514348401" duration="7100000" />
     </task>
     <servers />
   </component>

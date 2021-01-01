@@ -15,7 +15,7 @@ module.exports.login = async (req, res) => {
         const candidate = await User.findOne({email: req.body.email})
         if (candidate) {
 
-            if(!candidate.isVerified){
+            if (!candidate.isVerified) {
 
                 res.status(409).json({
                     message: 'Access is denied. Please, confirm your email.'

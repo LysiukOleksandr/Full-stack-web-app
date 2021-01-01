@@ -1,17 +1,18 @@
 import axios from 'axios'
+import {SET_IS_AUTH, SET_USER_DATA, SET_MESSAGE} from './constants'
 
 export const setIsAuth = (bool) => ({
-    type: 'SET_IS_AUTH',
+    type: SET_IS_AUTH,
     payload: bool
 })
 
 export const setUserData = (val) => ({
-    type: 'SET_USER_DATA',
+    type: SET_USER_DATA,
     payload: val
 })
 
 export const setMessage = (message) => ({
-    type: 'SET_MESSAGE',
+    type: SET_MESSAGE,
     payload: message
 })
 

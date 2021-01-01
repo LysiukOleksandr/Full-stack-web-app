@@ -15,6 +15,7 @@ import User from "./components/User/User";
 import ProtectedRouter from "./ProtectedRouter";
 import ProtectedAuthRouter from "./ProtectedAuthRouter";
 import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
+import ProtectedHomeRouter from "./ProtectedHomeRouter";
 
 function App() {
     const dispatch = useDispatch()
@@ -50,7 +51,7 @@ function App() {
                 <Header isAuth={state.user.isAuth} userPhoto={state.user.userPhoto}/>
             </div>
             <div className="router-group">
-                <Route exact path='/' render={() => <Home isAuth={state.user.isAuth} />}/>
+                <ProtectedHomeRouter exact path='/' component={Home} isAuth={state.user.isAuth} />
                 <ProtectedAuthRouter exact path='/login' component={LoginForm} isAuth={state.user.isAuth} />
                 <ProtectedAuthRouter exact path='/forgot' component={Forgot} isAuth={state.user.isAuth} />
                 <ProtectedAuthRouter exact path='/register' component={Register} isAuth={state.user.isAuth} />

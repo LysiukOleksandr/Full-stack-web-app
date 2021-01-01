@@ -1,3 +1,5 @@
+import {SET_ARTICLES} from "../actions/constants";
+
 const defaultState = {
     articles: []
 }
@@ -5,9 +7,13 @@ const defaultState = {
 const articleReducer = (state = defaultState, action) => {
     switch (action.type) {
 
-        case 'TEST':
+        case SET_ARTICLES:
             return {
-                ...state
+                ...state,
+                articles: {
+                    ...state.articles,
+                    ...action.payload
+                }
             }
 
         default:
@@ -16,3 +22,5 @@ const articleReducer = (state = defaultState, action) => {
             }
     }
 }
+
+export default articleReducer

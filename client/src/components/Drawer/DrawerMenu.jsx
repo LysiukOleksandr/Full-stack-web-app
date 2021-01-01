@@ -25,9 +25,8 @@ const DrawerMenu = () => {
                 onClose={onClose}
                 visible={visible}
                 key='top'
+                height={140}
             >
-                <Button className='drawer__btn-articles'>Show acticles</Button>
-
                 <TextEditor />
             </Drawer>
             <Button className='drawer__btn' onClick={onOpen}>

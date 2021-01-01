@@ -3,16 +3,15 @@ import './Acticle.css'
 import {Card} from "antd";
 import Avatar from "antd/es/avatar/avatar";
 import Meta from "antd/es/card/Meta";
-import { TranslationOutlined } from '@ant-design/icons';
+import {TranslationOutlined} from '@ant-design/icons';
 
 
+const Article = () => {
 
-const Article = () =>{
-
-    return(
+    return (
         <div className='article'>
             <Card
-                style={{ width: 500 }}
+                style={{width: 500}}
                 cover={
                     <img
                         alt="example"
@@ -20,13 +19,13 @@ const Article = () =>{
                     />
                 }
                 actions={[
-                    <TranslationOutlined key="ukr" />,
-                    <TranslationOutlined key="ru" />,
-                    <TranslationOutlined key="eng" />
+                    <TranslationOutlined key="ukr"/>,
+                    <TranslationOutlined key="ru"/>,
+                    <TranslationOutlined key="eng"/>
                 ]}
             >
                 <Meta
-                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
                     title="Title"
                     description="This is the description"
                 />

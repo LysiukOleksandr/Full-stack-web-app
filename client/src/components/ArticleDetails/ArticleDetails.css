@@ -9,9 +9,7 @@
     align-items: center;
     flex-direction: column;
     padding-top: 20px;
-}
-
-.article-details__img{
+    position: relative;
 }
 
 .article-details__text{
@@ -19,5 +17,10 @@
     padding: 0 20px;
     margin-top: 20px;
     line-height: 1.5rem;
+}
 
+.translate{
+    position: absolute;
+    top: 45px;
+    right: -150px;
 }

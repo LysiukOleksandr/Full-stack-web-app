@@ -27,7 +27,8 @@ const Home = () => {
             <DrawerMenu/>
             {articles.length > 0 && articles.map((item, index) => <Article key={`${item}_${index}`} {...item} />)}
             <div className="pagination">
-                {articles.length > 0 && <Pagination onChange={onChange} defaultCurrent={currentPage} total={count}/>}
+                {articles.length > 0 &&
+                <Pagination onChange={onChange} defaultCurrent={currentPage} total={count}/>}
             </div>
         </div>
     )

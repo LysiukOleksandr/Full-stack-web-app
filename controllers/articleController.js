@@ -5,7 +5,8 @@ module.exports.uploadArticle = async (req, res) => {
         const article = new Article({
             image: req.file.path,
             title: req.body.articleTitle,
-            description: req.body.articleDescription
+            description: req.body.articleDescription,
+            content: req.body.articleContent
         })
 
         await article.save()
@@ -26,12 +27,29 @@ module.exports.getArticles = async (req, res) => {
         const limit = Number(req.query.limit)
         const offset = Number(req.query.offset)
         const articles = await Article.find().limit(limit).skip(offset)
+        const count = await Article.find().count()
         res.status(200).json({
-                articles
+            articles,
+            count
         })
     } catch (e) {
         res.status(400).json({
             message: "Something went wrong. Please, try again."
+        })
+    }
+}
+
+module.exports.getArticleDetails = async (req, res) => {
+    try {
+        const id = req.params.id
+        const article = await Article.findById(id)
+        res.status(200).json({
+            article
+        })
+
+    } catch (e) {
+        res.status(400).json({
+            message: "Something went wrong. Please reload page."
         })
     }
 }

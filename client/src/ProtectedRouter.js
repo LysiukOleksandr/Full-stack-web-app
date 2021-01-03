@@ -6,7 +6,7 @@ const ProtectedRouter = ({isAuth, component: Component, ...rest}) =>{
             {...rest}
             render={(props)=>{
                 if(isAuth){
-                    return <Component/>
+                    return <Component location={props.location} match={props.match}/>
                 }else{
                     return(
                         <Redirect to={{ pathname: "/", state: { from: props.location } }} />

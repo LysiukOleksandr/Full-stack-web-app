@@ -1,23 +1,34 @@
 import React from 'react'
+import './Home.css'
 import DrawerMenu from '../Drawer/DrawerMenu'
 import Article from "../Article/Acticle";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {Pagination} from "antd";
 import {fetchArticles} from "../../redux/actions/articleActionsCreator";
-
 
 const Home = () => {
 
     const dispatch = useDispatch()
 
-    React.useEffect(()=>{
-            dispatch(fetchArticles())
+    const {articles, count} = useSelector(({articleReducer}) => articleReducer)
 
-    }, [])
+    const limit = 10;
+    const offset = 0;
+
+    const [currentPage, setCurrentPage] = React.useState(1)
+
+    const onChange = (page, pageSize) => {
+        setCurrentPage(page)
+        dispatch(fetchArticles(page, limit, offset))
+    }
 
     return (
         <div className='home'>
             <DrawerMenu/>
-                <Article/>
+            {articles.length > 0 && articles.map((item, index) => <Article key={`${item}_${index}`} {...item} />)}
+            <div className="pagination">
+                {articles.length > 0 && <Pagination onChange={onChange} defaultCurrent={currentPage} total={count}/>}
+            </div>
         </div>
     )
 }

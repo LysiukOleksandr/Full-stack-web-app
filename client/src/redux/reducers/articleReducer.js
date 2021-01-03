@@ -1,19 +1,17 @@
 import {SET_ARTICLES} from "../actions/constants";
 
 const defaultState = {
-    articles: []
+    articles: [],
+    count: 0
 }
 
 const articleReducer = (state = defaultState, action) => {
     switch (action.type) {
-
         case SET_ARTICLES:
             return {
                 ...state,
-                articles: {
-                    ...state.articles,
-                    ...action.payload
-                }
+                articles: [...action.payload[0]],
+                count: action.payload[1]
             }
 
         default:

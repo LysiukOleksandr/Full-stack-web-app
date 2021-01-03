@@ -39,7 +39,7 @@ export const loginUser = (email, password) => (dispatch) => {
             dispatch(setMessage(res.data.message))
             if (res.status === 200) {
                 dispatch(setUserData(res.data.user))
-                localStorage.setItem('jwt', res.data.token)
+               localStorage.setItem('jwt', res.data.token)
             }
         })
         .catch((err) => {

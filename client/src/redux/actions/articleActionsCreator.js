@@ -6,9 +6,9 @@ export const setMessage = (message) => ({
     payload: message
 })
 
-export const setArticles = (val) => ({
+export const setArticles = (arr, val) => ({
     type: SET_ARTICLES,
-    payload: val
+    payload: [arr, val]
 })
 
 export const uploadArticle = (fd) => (dispatch) => {
@@ -19,7 +19,6 @@ export const uploadArticle = (fd) => (dispatch) => {
         }
     })
         .then((res) => {
-            console.log(res)
             dispatch(setMessage(res.data.message))
         })
         .catch((err) => {
@@ -30,19 +29,19 @@ export const uploadArticle = (fd) => (dispatch) => {
 }
 
 
-export const fetchArticles = () => (dispatch) => {
+export const fetchArticles = (page, limit) => (dispatch) => {
     const token = localStorage.getItem('jwt')
-    axios.get('http://localhost:8000/article?limit=10&offset=0', {
-        headers:{
+    const offset =  (page - 1) * limit
+    axios.get(`http://localhost:8000/article?limit=${limit}&offset=${offset}`, {
+        headers: {
             'Authorization': token
         }
     })
-        .then((res)=>{
-            console.log(res)
-            dispatch(setArticles(res.data.articles))
+        .then((res) => {
+            dispatch(setArticles(res.data.articles, res.data.count))
         })
-        .catch((err)=>{
-            if(err){
+        .catch((err) => {
+            if (err.response) {
                 dispatch(setMessage(err.response.data.message))
             }
         })

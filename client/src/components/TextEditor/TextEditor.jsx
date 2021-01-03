@@ -4,7 +4,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {Button, Input, Modal, Typography} from "antd";
 import {useDispatch} from 'react-redux'
 import './TextEditor.css'
-import {uploadArticle} from "../../redux/actions/articleActionsCreator";
+import {fetchArticles, uploadArticle} from "../../redux/actions/articleActionsCreator";
 
 const {Title} = Typography
 
@@ -16,6 +16,7 @@ const TextEditor = () => {
     const [image, setImage] = React.useState()
     const [title, setTitle] = React.useState()
     const [description, setDescription] = React.useState()
+    const [content, setContent] = React.useState()
     const showModal = () => {
         setIsModalVisible(true);
     }
@@ -25,16 +26,19 @@ const TextEditor = () => {
     };
 
     const handleOk = () => {
-        if (image && title && description) {
+        if (image && title && content) {
             const fd = new FormData()
             fd.append('articleImage', image, image.name)
             fd.append('articleTitle', title)
+            fd.append('articleContent', content)
             fd.append('articleDescription', description)
+
             dispatch(uploadArticle(fd))
 
             setImage('')
             setTitle('')
             setDescription('')
+            setContent('')
         }
         setIsModalVisible(false);
     }
@@ -47,15 +51,23 @@ const TextEditor = () => {
         setTitle(e.target.value)
     }
 
-    const onChangeDescription = (e, editor) => {
+    const onChangeDescription = (e) => {
+        setDescription(e.target.value)
+    }
+
+    const onChangeContent = (e, editor) => {
         const data = editor.getData();
-        setDescription(data)
-        console.log(description)
+        setContent(data)
+    }
+
+    const onArticlesRender = () => {
+        dispatch(fetchArticles())
     }
 
     return (
         <div className="editor">
             <Button onClick={showModal}>New Article</Button>
+            <Button className='drawer__btn-articles' onClick={onArticlesRender}>Show articles</Button>
             <Modal
                 title="CKeditor"
                 visible={isModalVisible}
@@ -68,10 +80,12 @@ const TextEditor = () => {
                 <Title level={4}>Title</Title>
                 <Input className='editor__input' value={title} onChange={onChangeTitle}/>
                 <Title level={4}>Description</Title>
+                <Input className='editor__description' value={description} onChange={onChangeDescription}/>
+                <Title level={4}>Content</Title>
                 <CKEditor
                     editor={ClassicEditor}
-                    data={description}
-                    onChange={onChangeDescription}
+                    data={content}
+                    onChange={onChangeContent}
                 />
             </Modal>
         </div>

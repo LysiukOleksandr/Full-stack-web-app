@@ -3,15 +3,19 @@ const {Schema, model} = require('mongoose')
 const articleSchema = new Schema({
     image: {
         type: String,
-        required:true
+        required: true
     },
     title: {
         required: true,
         type: String,
     },
-    description:{
+    description: {
         required: true,
-        type:String
+        type: String
+    },
+    content: {
+        required: true,
+        type: String
     }
 })
 

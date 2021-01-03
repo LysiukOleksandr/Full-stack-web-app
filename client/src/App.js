@@ -17,7 +17,7 @@ import ProtectedAuthRouter from "./ProtectedAuthRouter";
 import ArticleDetails from "./components/ArticleDetails/ArticleDetails";
 import ProtectedHomeRouter from "./ProtectedHomeRouter";
 
-function App() {
+function App(props) {
     const dispatch = useDispatch()
 
     const state = useSelector(({userReducer}) => userReducer)
@@ -44,7 +44,6 @@ function App() {
         }
     }, [])
 
-
     return (
         <div className="App">
             <div className="header">
@@ -58,7 +57,7 @@ function App() {
                 <ProtectedAuthRouter path='/reset/:token' component={Reset} isAuth={state.user.isAuth} />
                 <ProtectedRouter exact path='/user' component={User} isAuth={state.user.isAuth}/>
                 <ProtectedRouter exact path='/user/change' component={UserChange} isAuth={state.user.isAuth}/>
-                <ProtectedRouter exact path='/article' component={ArticleDetails} isAuth={state.user.isAuth} />
+                <ProtectedRouter exact path='/article/:id'  component={ArticleDetails} isAuth={state.user.isAuth} />
             </div>
         </div>
     );

@@ -1,36 +1,33 @@
 import React from 'react'
 import './Acticle.css'
-import {Card} from "antd";
-import Avatar from "antd/es/avatar/avatar";
+import {Card, Pagination} from "antd";
 import Meta from "antd/es/card/Meta";
-import {TranslationOutlined} from '@ant-design/icons';
+import Parser from "html-react-parser";
+import {Link} from "react-router-dom";
 
 
-const Article = () => {
-
+const Article = ({_id:id,image, title, description}) => {
     return (
+        <Link to={`/article/${id}`}>
         <div className='article'>
             <Card
                 style={{width: 500}}
                 cover={
                     <img
                         alt="example"
-                        src="https://www.natureindex.com/news-blog/image/5b175525847f4ad8bb7d97cb"
+                        src={`http://localhost:8000/${image}`}
                     />
                 }
-                actions={[
-                    <TranslationOutlined key="ukr"/>,
-                    <TranslationOutlined key="ru"/>,
-                    <TranslationOutlined key="eng"/>
-                ]}
             >
                 <Meta
-                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
-                    title="Title"
-                    description="This is the description"
+                    title={title}
+                    description={Parser(description)}
                 />
             </Card>
+
+
         </div>
+        </Link>
     )
 }
 

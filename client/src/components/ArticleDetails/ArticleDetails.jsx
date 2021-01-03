@@ -1,19 +1,44 @@
 import React from 'react'
 import './ArticleDetails.css'
 import {Image, Typography} from "antd";
+import axios from "axios";
+import {setMessage} from "../../redux/actions/articleActionsCreator";
+import {useDispatch} from "react-redux";
+import Parser from 'html-react-parser'
 
 const {Title} = Typography;
 
-const ArticleDetails = () =>{
-    return(
+const ArticleDetails = ({match}) => {
+
+    const dispatch = useDispatch()
+
+    const [article, setArticle] = React.useState({})
+
+    React.useEffect(() => {
+        const token = localStorage.getItem('jwt')
+        axios.get(`http://localhost:8000/article/${match.params.id}`, {
+            headers: {
+                'Authorization': token
+            }
+        })
+            .then((res) => {
+                setArticle(res.data.article)
+            }).catch((err) => {
+            if (err.response) {
+                dispatch(setMessage(err.response.data.message))
+            }
+        })
+    }, [match.params.id, dispatch])
+    return (
         <div className='article-details'>
             <Image
                 className='article-details__img'
                 width={300}
-                src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+                src={article.image && `http://localhost:8000/${article.image}`}
             />
-            <Title level={3} className='article-details__title'>Title here</Title>
-            <div className="article-details__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis dolorem error et ipsa molestiae nostrum repellendus voluptate. Animi asperiores assumenda consectetur dicta dolore dolorem dolorum exercitationem expedita fuga id itaque magni molestias nihil nobis numquam quae quo quod, quos recusandae repellat sed, suscipit unde. Accusantium at consequatur consequuntur debitis, dicta, dignissimos dolores doloribus dolorum eligendi error est ex excepturi fugit hic labore minima minus molestias nam nobis odit officia quas reiciendis rerum sed tempore ullam voluptas voluptatum. Adipisci aliquam animi aspernatur, consectetur consequuntur dicta dolorum ea facere magnam minus, nam nemo neque odio quasi reprehenderit similique soluta veritatis voluptate?</div>
+            <Title level={3} className='article-details__title'>{article.title && article.title}</Title>
+            <div className="article-details__description">{article.description && article.description}</div>
+            <div className="article-details__text">{article.content && Parser(article.content)}</div>
         </div>
     )
 }

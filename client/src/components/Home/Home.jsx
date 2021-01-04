@@ -5,6 +5,7 @@ import Article from "../Article/Acticle";
 import {useDispatch, useSelector} from "react-redux";
 import {Pagination} from "antd";
 import {fetchArticles} from "../../redux/actions/articleActionsCreator";
+import SearchInput from "../SearchInput/SearchInput";
 
 const Home = () => {
 
@@ -12,8 +13,9 @@ const Home = () => {
 
     const {articles, count} = useSelector(({articleReducer}) => articleReducer)
 
+
     const limit = 10;
-    const offset = 0;
+    let offset = 0;
 
     const [currentPage, setCurrentPage] = React.useState(1)
 
@@ -25,6 +27,7 @@ const Home = () => {
     return (
         <div className='home'>
             <DrawerMenu/>
+             <SearchInput/>
             {articles.length > 0 && articles.map((item, index) => <Article key={`${item}_${index}`} {...item} />)}
             <div className="pagination">
                 {articles.length > 0 &&

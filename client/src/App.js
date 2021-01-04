@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import LoginForm from "./components/LoginForm/LoginForm";
-import {Route, Redirect, Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import Register from "./components/Register/Register";
 import Forgot from "./components/Forgot/Forgot";
 import Home from './components/Home/Home'
@@ -29,8 +29,8 @@ function App(props) {
         });
     };
 
-    React.useEffect(()=>{
-        if(state.message && state.message.length > 1){
+    React.useEffect(() => {
+        if (state.message && state.message.length > 1) {
             openNotification(state.message)
         }
     }, [state.message])
@@ -50,14 +50,14 @@ function App(props) {
                 <Header isAuth={state.user.isAuth} userPhoto={state.user.userPhoto}/>
             </div>
             <div className="router-group">
-                <ProtectedHomeRouter exact path='/' component={Home} isAuth={state.user.isAuth} />
-                <ProtectedAuthRouter exact path='/login' component={LoginForm} isAuth={state.user.isAuth} />
-                <ProtectedAuthRouter exact path='/forgot' component={Forgot} isAuth={state.user.isAuth} />
-                <ProtectedAuthRouter exact path='/register' component={Register} isAuth={state.user.isAuth} />
-                <ProtectedAuthRouter path='/reset/:token' component={Reset} isAuth={state.user.isAuth} />
+                <ProtectedHomeRouter exact path='/' component={Home} isAuth={state.user.isAuth}/>
+                <ProtectedAuthRouter exact path='/login' component={LoginForm} isAuth={state.user.isAuth}/>
+                <ProtectedAuthRouter exact path='/forgot' component={Forgot} isAuth={state.user.isAuth}/>
+                <ProtectedAuthRouter exact path='/register' component={Register} isAuth={state.user.isAuth}/>
+                <ProtectedAuthRouter path='/reset/:token' component={Reset} isAuth={state.user.isAuth}/>
                 <ProtectedRouter exact path='/user' component={User} isAuth={state.user.isAuth}/>
                 <ProtectedRouter exact path='/user/change' component={UserChange} isAuth={state.user.isAuth}/>
-                <ProtectedRouter exact path='/article/:id'  component={ArticleDetails} isAuth={state.user.isAuth} />
+                <ProtectedRouter exact path='/article/:id' component={ArticleDetails} isAuth={state.user.isAuth}/>
             </div>
         </div>
     );

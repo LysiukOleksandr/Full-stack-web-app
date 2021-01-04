@@ -1,0 +1,13 @@
+.search-input{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input input{
+    width: 300px;
+}
+
+.ant-input-affix-wrapper{
+    width: 200px;
+}

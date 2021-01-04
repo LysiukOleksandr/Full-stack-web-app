@@ -2,7 +2,9 @@ import {SET_ARTICLES} from "../actions/constants";
 
 const defaultState = {
     articles: [],
-    count: 0
+    count: 0,
+    currentPage: 1,
+    offset: 0
 }
 
 const articleReducer = (state = defaultState, action) => {

@@ -225,7 +225,7 @@ module.exports.protect = async (req, res, next) => {
         }
     } catch (e) {
         res.status(400).json({
-            message: 'Something went wrong'
+            message: 'Something went wrong.'
         })
     }
 }

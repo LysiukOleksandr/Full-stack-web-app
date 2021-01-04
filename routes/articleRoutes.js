@@ -30,8 +30,9 @@ const upload = multer({
     },
     fileFilter
 })
-
 router.post('/', authController.protect, upload.single('articleImage'), articleController.uploadArticle)
-router.get('/', authController.protect, articleController.getArticles)
-router.get('/:id',authController.protect, articleController.getArticleDetails)
+router.get('/get', authController.protect, articleController.getArticles)
+router.get('/search', authController.protect, articleController.searchArticles)
+router.get('/:id', authController.protect, articleController.getArticleDetails)
+
 module.exports = router

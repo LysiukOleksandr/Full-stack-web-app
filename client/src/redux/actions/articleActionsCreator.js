@@ -31,8 +31,8 @@ export const uploadArticle = (fd) => (dispatch) => {
 
 export const fetchArticles = (page, limit) => (dispatch) => {
     const token = localStorage.getItem('jwt')
-    const offset =  (page - 1) * limit
-    axios.get(`http://localhost:8000/article?limit=${limit}&offset=${offset}`, {
+    const offset = (page - 1) * limit
+    axios.get(`http://localhost:8000/article/get?limit=${limit}&offset=${offset}&sort`, {
         headers: {
             'Authorization': token
         }
@@ -44,5 +44,21 @@ export const fetchArticles = (page, limit) => (dispatch) => {
             if (err.response) {
                 dispatch(setMessage(err.response.data.message))
             }
+        })
+}
+
+
+export const searchArticles = (value) => (dispatch) => {
+    const token = localStorage.getItem('jwt')
+    axios.get(`http://localhost:8000/article/search?value=${value}`, {
+        headers: {
+            'Authorization': token
+        }
+    })
+        .then((res) => {
+            dispatch(setArticles(res.data.articles, res.data.count))
+        })
+        .catch((err) => {
+            console.log(err.response.data.message)
         })
 }

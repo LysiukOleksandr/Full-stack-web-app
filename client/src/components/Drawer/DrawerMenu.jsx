@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, Drawer} from "antd";
 import './DrawerMenu.css'
-import TextEditor from "../TextEditor/TextEditor";
+import ModalWindow from "../Modal/Modal";
 
 const DrawerMenu = () => {
 
@@ -16,7 +16,7 @@ const DrawerMenu = () => {
     }
 
 
-    return(
+    return (
         <div className='drawer'>
             <Drawer
                 title="Menu"
@@ -27,7 +27,7 @@ const DrawerMenu = () => {
                 key='top'
                 height={140}
             >
-                <TextEditor />
+                <ModalWindow/>
             </Drawer>
             <Button className='drawer__btn' onClick={onOpen}>
                 Menu

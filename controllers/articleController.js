@@ -1,4 +1,5 @@
 const Article = require('../models/ArticleModel')
+const translate = require('google-translate-free');
 
 module.exports.uploadArticle = async (req, res) => {
     try {
@@ -27,7 +28,7 @@ module.exports.getArticles = async (req, res) => {
         const limit = Number(req.query.limit)
         const offset = Number(req.query.offset)
         const articles = await Article.find().limit(limit).skip(offset)
-        const count = await Article.find().count()
+        const count = await Article.find().countDocuments()
         res.status(200).json({
             articles,
             count
@@ -50,6 +51,21 @@ module.exports.getArticleDetails = async (req, res) => {
     } catch (e) {
         res.status(400).json({
             message: "Something went wrong. Please reload page."
+        })
+    }
+}
+
+module.exports.searchArticles = async (req, res) => {
+    try {
+        const articles = await Article.find({title: {$regex: req.query.value, $options: "i"}})
+        const count = await Article.find({title: {$regex: req.query.value, $options: "i"}}).countDocuments()
+        res.status(200).json({
+            articles,
+            count
+        })
+    } catch (e) {
+        res.status(400).json({
+            message: "Something went wrong. Please, try again."
         })
     }
 }

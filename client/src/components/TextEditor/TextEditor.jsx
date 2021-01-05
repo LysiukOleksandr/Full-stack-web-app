@@ -13,28 +13,35 @@ const TextEditor = ({
                         title,
                         description,
                         content,
-                        upload,
+                        lang,
+                        onChangeState,
+                        onChangeImage
                     }) => {
+
+
     return (
         <div>
             {id === 0 ? <div>
                 <Title level={4}>{image}</Title>
                 <label className='editor__image' htmlFor="editor__image">Upload</label>
-                <input id='editor__image' type='file'/>
+                <input id='editor__image' type='file' onChange={(e) => onChangeImage(e.target.files[0])}/>
             </div> : ''}
-
             <br/>
             <Title level={4}>{title}</Title>
-            <Input className='editor__input'/>
+            <Input className='editor__input' onChange={(e) => onChangeState(e.target.value, lang, 'title')}/>
             <Title level={4}>{description}</Title>
-            <Input className='editor__description'/>
+            <Input className='editor__description'
+                   onChange={(e) => onChangeState(e.target.value, lang, 'description')}/>
             <Title level={4}>{content}</Title>
             <CKEditor
                 editor={ClassicEditor}
+                onChange={(e, editor) => {
+                    const data = editor.getData()
+                    onChangeState(data, lang, 'content')
+                }}
             />
         </div>
     )
 }
-
 
 export default TextEditor

@@ -38,7 +38,24 @@ const ModalWindow = () => {
     const dispatch = useDispatch()
 
     const [isModalVisible, setIsModalVisible] = React.useState(false);
-    const [image, setImage] = React.useState()
+    const [image, setImage] = React.useState(null)
+    const [state, setState] = React.useState({
+        eng: {
+            title: '',
+            description: '',
+            content: ''
+        },
+        ru: {
+            title: '',
+            description: '',
+            content: ''
+        },
+        ua: {
+            title: '',
+            description: '',
+            content: ''
+        }
+    })
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -52,41 +69,45 @@ const ModalWindow = () => {
 
         // const fd = new FormData()
         //  fd.append('articleImage', image, image.name)
-        // fd.append('articleTitle', title)
-        //  fd.append('articleContent', content)
-        //   fd.append('articleDescription', description)
-
-        //   dispatch(uploadArticle(fd))
 
         // setImage('')
         // setTitle('')
         // setDescription('')
         // setContent('')
 
-        setIsModalVisible(false);
+        let engArr = Object.values(state.eng)
+        engArr = engArr.filter(item => item !== '')
+        if (engArr.length === 3 && image !== null) {
+            const fd = new FormData()
+            fd.append('articleImage', image, image.name)
+            fd.append('articles', JSON.stringify(state))
+            dispatch(uploadArticle(fd))
+            setIsModalVisible(false);
+        }
+
+
     }
-
-
-    // const onChangeImage = (e) => {
-    //   setImage(e.target.files[0])
-    // }
-
-    // const onChangeTitle = (e) => {
-    //    setTitle(e.target.value)
-    // }
-
-    // const onChangeDescription = (e) => {
-    //     setDescription(e.target.value)
-    // }
-
-    // const onChangeContent = (e, editor) => {
-    //    const data = editor.getData();
-    //    setContent(data)
-    // }
 
     const onArticlesRender = () => {
         dispatch(fetchArticles())
     }
+
+    const onChangeState = (value, lang, elem) => {
+        const obj = {
+            ...state,
+            [lang]: {
+                ...state[lang],
+                [elem]: value
+            }
+        }
+        setState(obj)
+    }
+
+    const onChangeImage = (img) => {
+        setImage(img)
+        console.log(img.name)
+    }
+
 
     return (
         <div className="modal">
@@ -99,8 +120,14 @@ const ModalWindow = () => {
                 onCancel={handleCancel}
             >
                 <Tabs defaultActiveKey="0">
-                    {tabs && tabs.map((tab, index) => (
-                        <TabPane tab={tab.lang} key={tab.id}><TextEditor {...tab}/></TabPane>
+                    {tabs && tabs.map((tab) => (
+                        <TabPane tab={tab.lang} key={tab.id}>
+                            <TextEditor
+                                {...tab}
+                                onChangeState={onChangeState}
+                                onChangeImage={onChangeImage}
+                            />
+                        </TabPane>
                     ))}
                 </Tabs>
 

@@ -5,17 +5,49 @@ const articleSchema = new Schema({
         type: String,
         required: true
     },
-    title: {
-        required: true,
-        type: String,
-    },
-    description: {
-        required: true,
-        type: String
-    },
-    content: {
-        required: true,
-        type: String
+    languages:{
+        eng:{
+            title: {
+                type:String,
+                required: true
+            },
+            description:{
+                type:String,
+                required: true
+            },
+            content:{
+                type: String,
+                required: true
+            }
+        },
+        ru:{
+            title: {
+                type:String,
+                default: ''
+            },
+            description:{
+                type:String,
+                default: ''
+            },
+            content:{
+                type: String,
+                default: ''
+            }
+        },
+        ua:{
+            title: {
+                type:String,
+                default: ''
+            },
+            description:{
+                type:String,
+                default: ''
+            },
+            content:{
+                type: String,
+                default: ''
+            }
+        }
     }
 })
 

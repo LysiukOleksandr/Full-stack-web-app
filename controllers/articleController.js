@@ -54,8 +54,14 @@ module.exports.getArticleDetails = async (req, res) => {
 
 module.exports.searchArticles = async (req, res) => {
     try {
-        const articles = await Article.find({title: {$regex: req.query.value, $options: "i"}})
-        const count = await Article.find({title: {$regex: req.query.value, $options: "i"}}).countDocuments()
+        const articles = await Article.find({"languages.eng.title": {$regex: req.query.value, $options: "i"}})
+        const count = await Article.find({
+            "languages.eng.title": {
+                $regex: req.query.value,
+                $options: "i"
+            }
+        }).countDocuments()
+
         res.status(200).json({
             articles,
             count

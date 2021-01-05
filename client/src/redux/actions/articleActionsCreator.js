@@ -31,6 +31,9 @@ export const uploadArticle = (fd) => (dispatch) => {
 
 export const fetchArticles = (page, limit) => (dispatch) => {
     const token = localStorage.getItem('jwt')
+    if(!limit){
+        limit = 10
+    }
     const offset = (page - 1) * limit
     axios.get(`http://localhost:8000/article/get?limit=${limit}&offset=${offset}&sort`, {
         headers: {

@@ -8,6 +8,7 @@ import './TextEditor.css'
 const {Title} = Typography
 
 const TextEditor = ({
+                        state,
                         id,
                         image,
                         title,
@@ -15,10 +16,9 @@ const TextEditor = ({
                         content,
                         lang,
                         onChangeState,
-                        onChangeImage
+                        onChangeImage,
+
                     }) => {
-
-
     return (
         <div>
             {id === 0 ? <div>
@@ -28,13 +28,16 @@ const TextEditor = ({
             </div> : ''}
             <br/>
             <Title level={4}>{title}</Title>
-            <Input className='editor__input' onChange={(e) => onChangeState(e.target.value, lang, 'title')}/>
+            <Input className='editor__input' value={state[lang].title}
+                   onChange={(e) => onChangeState(e.target.value, lang, 'title')}/>
             <Title level={4}>{description}</Title>
             <Input className='editor__description'
+                   value={state[lang].description}
                    onChange={(e) => onChangeState(e.target.value, lang, 'description')}/>
             <Title level={4}>{content}</Title>
             <CKEditor
                 editor={ClassicEditor}
+                data={state[lang].content}
                 onChange={(e, editor) => {
                     const data = editor.getData()
                     onChangeState(data, lang, 'content')

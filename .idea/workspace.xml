@@ -4,10 +4,11 @@
     <list default="true" id="c9dbc551-0795-4a9f-a7dc-900fd08acc30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Article/Acticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Article/Acticle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/Modal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TextEditor/TextEditor.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/articleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/articleController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ArticleModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ArticleModel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,7 @@
       <workItem from="1609698680743" duration="6988000" />
       <workItem from="1609749353307" duration="16786000" />
       <workItem from="1609795460588" duration="1053000" />
-      <workItem from="1609836105645" duration="6397000" />
+      <workItem from="1609836105645" duration="9683000" />
     </task>
     <servers />
   </component>

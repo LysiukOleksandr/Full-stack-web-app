@@ -66,15 +66,6 @@ const ModalWindow = () => {
     };
 
     const handleOk = () => {
-
-        // const fd = new FormData()
-        //  fd.append('articleImage', image, image.name)
-
-        // setImage('')
-        // setTitle('')
-        // setDescription('')
-        // setContent('')
-
         let engArr = Object.values(state.eng)
         engArr = engArr.filter(item => item !== '')
         if (engArr.length === 3 && image !== null) {
@@ -83,9 +74,25 @@ const ModalWindow = () => {
             fd.append('articles', JSON.stringify(state))
             dispatch(uploadArticle(fd))
             setIsModalVisible(false);
+            setImage(null)
+            setState({
+                eng: {
+                    title: '',
+                    description: '',
+                    content: ''
+                },
+                ru: {
+                    title: '',
+                    description: '',
+                    content: ''
+                },
+                ua: {
+                    title: '',
+                    description: '',
+                    content: ''
+                }
+            })
         }
-
-
     }
 
     const onArticlesRender = () => {
@@ -93,21 +100,12 @@ const ModalWindow = () => {
     }
 
     const onChangeState = (value, lang, elem) => {
-        const obj = {
-            ...state,
-            [lang]: {
-                ...state[lang],
-                [elem]: value
-            }
-        }
-        setState(obj)
+        setState(s => ({...s, [lang]: {...s[lang], [elem]: value}}))
     }
 
     const onChangeImage = (img) => {
         setImage(img)
-        console.log(img.name)
     }
-
 
     return (
         <div className="modal">
@@ -124,6 +122,7 @@ const ModalWindow = () => {
                         <TabPane tab={tab.lang} key={tab.id}>
                             <TextEditor
                                 {...tab}
+                                state={state}
                                 onChangeState={onChangeState}
                                 onChangeImage={onChangeImage}
                             />

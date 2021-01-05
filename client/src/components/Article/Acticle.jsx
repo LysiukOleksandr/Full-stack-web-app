@@ -6,9 +6,11 @@ import Parser from "html-react-parser";
 import {Link} from "react-router-dom";
 
 
-const Article = ({_id: id, image, title, description}) => {
-    return (
+const Article = ({_id: id, languages, image}) => {
 
+    const {title, description} = languages.eng
+
+    return (
         <div className='article'>
             <Link to={`/article/${id}`}>
                 <Card

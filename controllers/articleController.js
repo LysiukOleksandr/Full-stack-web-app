@@ -3,27 +3,15 @@ const translate = require('google-translate-free');
 
 module.exports.uploadArticle = async (req, res) => {
     try {
-        // const article = new Article({
-        //     image: req.file.path,
-        //     title: req.body.articleTitle,
-        //     description: req.body.articleDescription,
-        //     content: req.body.articleContent
-        // })
-        //
-        // await article.save()
-        //
-        // res.status(201).json({
-        //     message: 'The article was successfully created'
-        // })
-        console.log(JSON.parse(req.body.articles))
-        console.log(req.body.articles)
         const article = new Article({
             image: req.file.path,
-            languages:{...JSON.parse(req.body.articles)}
+            languages: {...JSON.parse(req.body.articles)}
         })
-        console.log(article)
 
         await article.save()
+        res.status(201).json({
+            message: 'The article was successfully created'
+        })
 
     } catch (e) {
         res.status(400).json({

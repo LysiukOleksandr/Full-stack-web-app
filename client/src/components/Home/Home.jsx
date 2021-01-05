@@ -10,14 +10,12 @@ import SearchInput from "../SearchInput/SearchInput";
 const Home = () => {
 
     const dispatch = useDispatch()
-
+    const [currentPage, setCurrentPage] = React.useState(1)
     const {articles, count} = useSelector(({articleReducer}) => articleReducer)
-
 
     const limit = 10;
     let offset = 0;
 
-    const [currentPage, setCurrentPage] = React.useState(1)
 
     const onChange = (page, pageSize) => {
         setCurrentPage(page)
@@ -27,7 +25,7 @@ const Home = () => {
     return (
         <div className='home'>
             <DrawerMenu/>
-             <SearchInput/>
+            <SearchInput/>
             {articles.length > 0 && articles.map((item, index) => <Article key={`${item}_${index}`} {...item} />)}
             <div className="pagination">
                 {articles.length > 0 &&

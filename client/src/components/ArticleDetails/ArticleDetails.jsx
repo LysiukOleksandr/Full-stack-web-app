@@ -1,21 +1,18 @@
 import React from 'react'
 import './ArticleDetails.css'
-import {Image, Typography} from "antd";
+import {Image, Tabs, Typography} from "antd";
 import axios from "axios";
 import {setMessage} from "../../redux/actions/articleActionsCreator";
 import {useDispatch} from "react-redux";
-import Parser from 'html-react-parser'
+import ArticleDetailsTab from "../ArticleDetailsTab/ArticleDetailsTab";
 
-const {Title} = Typography;
-
+const {TabPane} = Tabs;
 
 const ArticleDetails = ({match}) => {
 
     const dispatch = useDispatch()
 
-    const [article, setArticle] = React.useState({})
-
-
+    const [article, setArticle] = React.useState(null)
     React.useEffect(() => {
         const token = localStorage.getItem('jwt')
         axios.get(`http://localhost:8000/article/${match.params.id}`, {
@@ -33,14 +30,13 @@ const ArticleDetails = ({match}) => {
     }, [match.params.id, dispatch])
     return (
         <div className='article-details'>
-            <Image
-                className='article-details__img'
-                width={300}
-                src={article.image && `http://localhost:8000/${article.image}`}
-            />
-            <Title level={3} className='article-details__title'>{article.title && article.title}</Title>
-            <div className="article-details__description">{article.description && article.description}</div>
-            <div className="article-details__text">{article.content && Parser(article.content)}</div>
+            <Tabs defaultActiveKey="1" centered>
+                   {article && Object.keys(article.languages).map((tab, i) => (
+                        <TabPane tab={tab} key={`${tab}_${i}`} disabled={!article.languages[tab].title}>
+                        <ArticleDetailsTab {...article.languages[tab]} image={article.image}/>
+                    </TabPane>
+                ))}
+            </Tabs>
         </div>
     )
 }

@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9dbc551-0795-4a9f-a7dc-900fd08acc30" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/ArticleDetailsTab/ArticleDetailsTab.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ArticleDetailsTab/ArticleDetailsTab.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/actions/articleActionsCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/actions/articleActionsCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/articleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/articleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ArticleDetails/ArticleDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ArticleDetails/ArticleDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ArticleDetails/ArticleDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ArticleDetails/ArticleDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ArticleModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ArticleModel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +97,7 @@
       <workItem from="1609698680743" duration="6988000" />
       <workItem from="1609749353307" duration="16786000" />
       <workItem from="1609795460588" duration="1053000" />
-      <workItem from="1609836105645" duration="11007000" />
+      <workItem from="1609836105645" duration="15818000" />
     </task>
     <servers />
   </component>

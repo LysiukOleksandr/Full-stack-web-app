@@ -10,7 +10,7 @@ import Header from "./components/Header/Header";
 import UserChange from "./components/UserChange/UserChange";
 import {notification} from "antd";
 import {useDispatch, useSelector} from 'react-redux'
-import {getUserData} from "./redux/actions/userActionsCreator";
+import {getUserData, setIsAuth} from "./redux/actions/userActionsCreator";
 import User from "./components/User/User";
 import ProtectedRouter from "./ProtectedRouter";
 import ProtectedAuthRouter from "./ProtectedAuthRouter";
@@ -30,6 +30,9 @@ function App(props) {
     };
 
     React.useEffect(() => {
+        if (state.message === "Unauthorized.") {
+            dispatch(setIsAuth(false))
+        }
         if (state.message && state.message.length > 1) {
             openNotification(state.message)
         }

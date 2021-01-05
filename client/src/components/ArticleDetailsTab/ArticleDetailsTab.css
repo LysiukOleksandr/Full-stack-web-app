@@ -1,0 +1,20 @@
+.article-details-tab__title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.article-details-tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    position: relative;
+}
+
+.article-details-tab__text{
+    max-width: 1200px;
+    padding: 0 20px;
+    margin-top: 20px;
+    line-height: 1.5rem;
+}

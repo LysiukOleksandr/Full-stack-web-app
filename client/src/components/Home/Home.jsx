@@ -35,15 +35,15 @@ const Home = () => {
 
     React.useEffect(() => {
         dispatch(fetchArticles(currentPage, limit, inputValue, sort))
-    }, [sort,limit])
+    }, [sort, limit])
 
     return (
         <div className='home'>
             <DrawerMenu/>
             <div className="home-menu">
-                <SearchInput currentPage={currentPage} sort={sort} limit={limit} onChangeInputValue={onChangeInputValue}
-                             inputValue={inputValue}/>
-                <SortArticle sort={sort} onChangeSort={onChangeSort} limit={limit} inputValue={inputValue}/>
+                <SearchInput sort={sort} limit={limit} onChangeInputValue={onChangeInputValue}
+                />
+                <SortArticle onChangeSort={onChangeSort}/>
             </div>
             {articles.length > 0 && articles.map((item, index) => <Article key={`${item}_${index}`} {...item} />)}
             <div className="pagination">

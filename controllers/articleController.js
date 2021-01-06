@@ -68,26 +68,3 @@ module.exports.getArticleDetails = async (req, res) => {
         })
     }
 }
-
-module.exports.searchArticles = async (req, res) => {
-    try {
-        const articles = await Article.find({"languages.eng.title": {$regex: req.query.value, $options: "i"}})
-        const count = await Article.find({
-            "languages.eng.title": {
-                $regex: req.query.value,
-                $options: "i"
-            }
-        }).countDocuments()
-
-        res.status(200).json({
-            articles,
-            count
-        })
-    } catch (e) {
-        res.status(400).json({
-            message: "Something went wrong. Please, try again."
-        })
-    }
-}
-
-

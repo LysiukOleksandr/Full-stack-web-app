@@ -7,7 +7,7 @@ import {fetchArticles} from "../../redux/actions/articleActionsCreator";
 
 const {Search} = Input;
 
-const SearchInput = ({sort, currentPage, limit, onChangeInputValue, inputValue}) => {
+const SearchInput = ({sort, limit, onChangeInputValue}) => {
 
     const dispatch = useDispatch()
 

@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9dbc551-0795-4a9f-a7dc-900fd08acc30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/SortArticle/SortArticle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/SortArticle/SortArticle.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ArticleDetailsTab/ArticleDetailsTab.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ArticleDetailsTab/ArticleDetailsTab.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ArticleDetailsTab/ArticleDetailsTab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ArticleDetailsTab/ArticleDetailsTab.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SearchInput/SearchInput.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SearchInput/SearchInput.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/SearchInput/SearchInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SearchInput/SearchInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/SortArticle/SortArticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SortArticle/SortArticle.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/redux/actions/articleActionsCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/actions/articleActionsCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/reducers/articleReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/reducers/articleReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/articleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/articleController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ArticleModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ArticleModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/articleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/articleRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +100,7 @@
       <workItem from="1609749353307" duration="16786000" />
       <workItem from="1609795460588" duration="1053000" />
       <workItem from="1609836105645" duration="21872000" />
-      <workItem from="1609922841425" duration="9305000" />
+      <workItem from="1609922841425" duration="11081000" />
     </task>
     <servers />
   </component>

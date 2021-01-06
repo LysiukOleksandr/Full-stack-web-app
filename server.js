@@ -5,9 +5,7 @@ const userRoutes = require('./routes/userRoutes')
 const articleRoutes = require('./routes/articleRoutes')
 const cors = require('cors')
 const morgan = require('morgan')
-
 const app = express()
-
 const PORT = process.env.PORT || 8000
 
 let allowCrossDomain = function (req, res, next) {
@@ -35,6 +33,7 @@ mongoose.connect('mongodb+srv://oleksandr:oleksandr1@authapp.3wxyv.mongodb.net/o
 }).then(() => {
     console.log('MongoDB connected')
 })
+
 
 app.listen(PORT, (err) => {
     if (err) {

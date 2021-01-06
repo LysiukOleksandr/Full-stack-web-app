@@ -28,12 +28,6 @@ export const uploadArticle = (fd) => (dispatch) => {
         })
 }
 
-
-// if search !== '' ----> поиск по значению
-// if sort !== 'сортировка'
-// currentPage = article reducer
-// тернарка в axios.get()
-
 export const fetchArticles = (page = 1, limit = 10, search, sort) => (dispatch) => {
     const token = localStorage.getItem('jwt')
     const offset = (page - 1) * limit

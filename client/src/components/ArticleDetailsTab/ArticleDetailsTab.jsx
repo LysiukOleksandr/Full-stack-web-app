@@ -11,7 +11,6 @@ const ArticleDetailsTab = ({image, title, description, content}) => {
 
             <Image
                 className='article-details-tab__img'
-                width={300}
                 src={image && `http://localhost:8000/${image}`}
             />
             <Title level={3} className='article-details-tab__title'>{title && title}</Title>

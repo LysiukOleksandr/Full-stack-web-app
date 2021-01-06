@@ -4,7 +4,6 @@ const defaultState = {
     articles: [],
     count: 0,
     currentPage: 1,
-    offset: 0
 }
 
 const articleReducer = (state = defaultState, action) => {
@@ -15,7 +14,6 @@ const articleReducer = (state = defaultState, action) => {
                 articles: [...action.payload[0]],
                 count: action.payload[1]
             }
-
         default:
             return {
                 ...state,

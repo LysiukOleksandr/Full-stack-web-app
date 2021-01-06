@@ -1,3 +1,14 @@
+.home-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 320px;
+    height: 32px;
+    padding-top: 50px;
+}
+
+
 
 .articles{
     display: flex;
@@ -9,3 +20,4 @@
     margin-bottom: 20px;
     text-align: center;
 }
+

@@ -2,17 +2,21 @@ import React from 'react'
 import './SearchInput.css'
 import {Input} from 'antd';
 import {useDispatch} from "react-redux";
-import {searchArticles} from "../../redux/actions/articleActionsCreator";
+import {fetchArticles} from "../../redux/actions/articleActionsCreator";
+// import {searchArticles} from "../../redux/actions/articleActionsCreator";
 
 const {Search} = Input;
 
-
-const SearchInput = () => {
+const SearchInput = ({sort, currentPage, limit, onChangeInputValue, inputValue}) => {
 
     const dispatch = useDispatch()
 
     const onSearch = (value) => {
-        dispatch(searchArticles(value))
+        if (value !== '') dispatch(fetchArticles(1, limit, value, sort))
+    }
+
+    const onChange = (e) => {
+        onChangeInputValue(e.target.value)
     }
 
     return (
@@ -22,6 +26,7 @@ const SearchInput = () => {
                 placeholder="Search article"
                 allowClear
                 onSearch={onSearch}
+                onChange={onChange}
                 style={{width: 200, margin: '0 10px'}}
             />
         </div>

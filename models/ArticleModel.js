@@ -48,6 +48,10 @@ const articleSchema = new Schema({
                 default: ''
             }
         }
+    },
+    createdAt:{
+        type: Date,
+        default: Date.now
     }
 })
 

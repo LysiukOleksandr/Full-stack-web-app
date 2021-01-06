@@ -24,12 +24,30 @@ module.exports.getArticles = async (req, res) => {
     try {
         const limit = Number(req.query.limit)
         const offset = Number(req.query.offset)
-        const articles = await Article.find().limit(limit).skip(offset)
-        const count = await Article.find().countDocuments()
+        const search = req.query.search
+        const sort = req.query.sort
+
+        // if search => search
+        // if search and sort => search and sort
+        // if sort => sort
+
+        const articles = await Article.find(
+            !!search ? {"languages.eng.title": {$regex: search, $options: "i"}} : {},
+        ).sort(
+            !!sort ? {createdAt: sort} : {}
+        ).limit(!!limit ? limit : 10).skip(!!offset ? offset : 0)
+
+        const count = await Article.find(
+            !!search ? {"languages.eng.title": {$regex: search, $options: "i"}} : {},
+        ).sort(
+            !!sort ? {createdAt: sort} : {}
+        ).countDocuments()
+
         res.status(200).json({
             articles,
             count
         })
+
     } catch (e) {
         res.status(400).json({
             message: "Something went wrong. Please, try again."
@@ -44,7 +62,6 @@ module.exports.getArticleDetails = async (req, res) => {
         res.status(200).json({
             article
         })
-
     } catch (e) {
         res.status(400).json({
             message: "Something went wrong. Please reload page."
@@ -72,3 +89,5 @@ module.exports.searchArticles = async (req, res) => {
         })
     }
 }
+
+

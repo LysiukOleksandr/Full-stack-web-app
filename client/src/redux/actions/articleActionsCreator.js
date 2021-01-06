@@ -29,19 +29,22 @@ export const uploadArticle = (fd) => (dispatch) => {
 }
 
 
-export const fetchArticles = (page, limit) => (dispatch) => {
+// if search !== '' ----> поиск по значению
+// if sort !== 'сортировка'
+// currentPage = article reducer
+// тернарка в axios.get()
+
+export const fetchArticles = (page = 1, limit = 10, search, sort) => (dispatch) => {
     const token = localStorage.getItem('jwt')
-    if(!limit){
-        limit = 10
-    }
     const offset = (page - 1) * limit
-    axios.get(`http://localhost:8000/article/get?limit=${limit}&offset=${offset}&sort`, {
+    axios.get(`http://localhost:8000/article/get?limit=${limit}&offset=${offset}${search ? `&search=${search}` : ''}${sort ? `&sort=${sort}` : ''}`, {
         headers: {
             'Authorization': token
         }
     })
         .then((res) => {
             dispatch(setArticles(res.data.articles, res.data.count))
+            console.log(res.data)
         })
         .catch((err) => {
             if (err.response) {
@@ -51,17 +54,18 @@ export const fetchArticles = (page, limit) => (dispatch) => {
 }
 
 
-export const searchArticles = (value) => (dispatch) => {
-    const token = localStorage.getItem('jwt')
-    axios.get(`http://localhost:8000/article/search?value=${value}`, {
-        headers: {
-            'Authorization': token
-        }
-    })
-        .then((res) => {
-            dispatch(setArticles(res.data.articles, res.data.count))
-        })
-        .catch((err) => {
-            console.log(err.response.data.message)
-        })
-}
+// export const searchArticles = (value) => (dispatch) => {
+//     const token = localStorage.getItem('jwt')
+//     axios.get(
+// `http://localhost:8000/article/search?value=${value}`, {
+//         headers: {
+//             'Authorization': token
+//         }
+//     })
+//         .then((res) => {
+//             dispatch(setArticles(res.data.articles, res.data.count))
+//         })
+//         .catch((err) => {
+//             console.log(err.response.data.message)
+//         })
+// }

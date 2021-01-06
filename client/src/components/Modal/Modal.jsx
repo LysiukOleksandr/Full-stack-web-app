@@ -33,29 +33,31 @@ const tabs = [
     }
 ]
 
+const defaultState = {
+    eng: {
+        title: '',
+        description: '',
+        content: ''
+    },
+    ru: {
+        title: '',
+        description: '',
+        content: ''
+    },
+    ua: {
+        title: '',
+        description: '',
+        content: ''
+    }
+}
+
 const ModalWindow = () => {
 
     const dispatch = useDispatch()
 
     const [isModalVisible, setIsModalVisible] = React.useState(false);
     const [image, setImage] = React.useState(null)
-    const [state, setState] = React.useState({
-        eng: {
-            title: '',
-            description: '',
-            content: ''
-        },
-        ru: {
-            title: '',
-            description: '',
-            content: ''
-        },
-        ua: {
-            title: '',
-            description: '',
-            content: ''
-        }
-    })
+    const [state, setState] = React.useState(defaultState)
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -75,23 +77,7 @@ const ModalWindow = () => {
             dispatch(uploadArticle(fd))
             setIsModalVisible(false);
             setImage(null)
-            setState({
-                eng: {
-                    title: '',
-                    description: '',
-                    content: ''
-                },
-                ru: {
-                    title: '',
-                    description: '',
-                    content: ''
-                },
-                ua: {
-                    title: '',
-                    description: '',
-                    content: ''
-                }
-            })
+            setState(defaultState)
         }
     }
 

@@ -81,10 +81,6 @@ const ModalWindow = () => {
         }
     }
 
-    const onArticlesRender = () => {
-        dispatch(fetchArticles())
-    }
-
     const onChangeState = (value, lang, elem) => {
         setState(s => ({...s, [lang]: {...s[lang], [elem]: value}}))
     }
@@ -96,7 +92,6 @@ const ModalWindow = () => {
     return (
         <div className="modal">
             <Button onClick={showModal}>New Article</Button>
-            <Button className='drawer__btn-articles' onClick={onArticlesRender}>Show articles</Button>
             <Modal
                 title="CKeditor"
                 visible={isModalVisible}

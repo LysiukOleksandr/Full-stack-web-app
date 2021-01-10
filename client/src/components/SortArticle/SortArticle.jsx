@@ -9,7 +9,7 @@ const sortBy = [
     {id: 1, value: 'asc', description: 'Date(Ascending)'}
 ]
 
-const SortArticle = ({ onChangeSort}) => {
+const SortArticle = ({onChangeSort}) => {
 
     const handleChange = (value) => {
         onChangeSort(value)

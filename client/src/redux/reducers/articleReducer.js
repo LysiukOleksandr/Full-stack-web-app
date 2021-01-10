@@ -1,9 +1,10 @@
-import {SET_ARTICLES} from "../actions/constants";
+import {IS_FETCHING, SET_ARTICLES} from "../actions/constants";
 
 const defaultState = {
     articles: [],
     count: 0,
     currentPage: 1,
+    isFetching: false
 }
 
 const articleReducer = (state = defaultState, action) => {
@@ -14,6 +15,13 @@ const articleReducer = (state = defaultState, action) => {
                 articles: [...action.payload[0]],
                 count: action.payload[1]
             }
+
+        case IS_FETCHING:
+            return {
+                ...state,
+                isFetching: action.payload
+            }
+
         default:
             return {
                 ...state,

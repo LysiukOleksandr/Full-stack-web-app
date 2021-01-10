@@ -1,4 +1,4 @@
-.home-menu{
+.home-menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,16 +8,18 @@
     padding-top: 50px;
 }
 
-
-
-.articles{
+.articles {
     display: flex;
     justify-content: center;
 }
 
-.pagination{
+.pagination {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+.empty{
+    margin-top: 150px;
 }
 

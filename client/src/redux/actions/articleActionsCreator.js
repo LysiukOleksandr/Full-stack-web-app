@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {SET_ARTICLES, SET_MESSAGE} from "./constants";
+import {IS_FETCHING, SET_ARTICLES, SET_MESSAGE} from "./constants";
 
 export const setMessage = (message) => ({
     type: SET_MESSAGE,
@@ -11,7 +11,13 @@ export const setArticles = (arr, val) => ({
     payload: [arr, val]
 })
 
+export const isFetching = (bool) =>({
+    type: IS_FETCHING,
+    payload: bool
+})
+
 export const uploadArticle = (fd) => (dispatch) => {
+    dispatch(isFetching(true))
     const token = localStorage.getItem('jwt')
     axios.post('http://localhost:8000/article', fd, {
         headers: {
@@ -25,10 +31,13 @@ export const uploadArticle = (fd) => (dispatch) => {
             if (err) {
                 dispatch(setMessage(err.response.data.message))
             }
-        })
+        }).finally(() => {
+        dispatch(isFetching(false))
+    })
 }
 
 export const fetchArticles = (page = 1, limit = 10, search, sort) => (dispatch) => {
+    dispatch(isFetching(true))
     const token = localStorage.getItem('jwt')
     const offset = (page - 1) * limit
     axios.get(`http://localhost:8000/article/get?limit=${limit}&offset=${offset}${search ? `&search=${search}` : ''}${sort ? `&sort=${sort}` : ''}`, {
@@ -38,28 +47,13 @@ export const fetchArticles = (page = 1, limit = 10, search, sort) => (dispatch) 
     })
         .then((res) => {
             dispatch(setArticles(res.data.articles, res.data.count))
-            console.log(res.data)
         })
         .catch((err) => {
             if (err.response) {
                 dispatch(setMessage(err.response.data.message))
             }
         })
+        .finally(() => {
+            dispatch(isFetching(false))
+        })
 }
-
-
-// export const searchArticles = (value) => (dispatch) => {
-//     const token = localStorage.getItem('jwt')
-//     axios.get(
-// `http://localhost:8000/article/search?value=${value}`, {
-//         headers: {
-//             'Authorization': token
-//         }
-//     })
-//         .then((res) => {
-//             dispatch(setArticles(res.data.articles, res.data.count))
-//         })
-//         .catch((err) => {
-//             console.log(err.response.data.message)
-//         })
-// }

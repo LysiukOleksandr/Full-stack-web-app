@@ -3,7 +3,6 @@ import './SearchInput.css'
 import {Input} from 'antd';
 import {useDispatch} from "react-redux";
 import {fetchArticles} from "../../redux/actions/articleActionsCreator";
-// import {searchArticles} from "../../redux/actions/articleActionsCreator";
 
 const {Search} = Input;
 

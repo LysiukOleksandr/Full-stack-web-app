@@ -1,12 +1,13 @@
 import React from 'react'
 import './Home.css'
 import DrawerMenu from '../Drawer/DrawerMenu'
-import Article from "../Article/Acticle";
 import {useDispatch, useSelector} from "react-redux";
 import {Pagination} from "antd";
 import {fetchArticles} from "../../redux/actions/articleActionsCreator";
 import SearchInput from "../SearchInput/SearchInput";
 import SortArticle from "../SortArticle/SortArticle";
+import Articles from "../Articles/Articles";
+import { Empty } from 'antd';
 
 const Home = () => {
 
@@ -16,11 +17,10 @@ const Home = () => {
     const [sort, setSort] = React.useState(null)
     const [inputValue, setInputValue] = React.useState('')
     const [limit, setLimit] = React.useState(10)
-    const {articles, count} = useSelector(({articleReducer}) => articleReducer)
+    const {articles, count, isFetching} = useSelector(({articleReducer}) => articleReducer)
 
     const onChange = (page) => {
         setCurrentPage(page)
-        console.log(page)
         dispatch(fetchArticles(page, limit, inputValue, sort))
     }
 
@@ -35,7 +35,7 @@ const Home = () => {
 
     React.useEffect(() => {
         dispatch(fetchArticles(currentPage, limit, inputValue, sort))
-    }, [sort, limit])
+    }, [sort, limit, currentPage])
 
     return (
         <div className='home'>
@@ -45,9 +45,16 @@ const Home = () => {
                 />
                 <SortArticle onChangeSort={onChangeSort}/>
             </div>
-            {articles.length > 0 && articles.map((item, index) => <Article key={`${item}_${index}`} {...item} />)}
+            {articles.length === 0 ? (
+                    <div className='empty'>
+                <Empty/>
+                    </div>
+            ):(
+                <Articles articles={articles} isFetching={isFetching} />
+            )}
+
             <div className="pagination">
-                {articles.length > 0 &&
+                {count > 10 &&
                 <Pagination onChange={onChange} defaultCurrent={currentPage} total={count}/>}
             </div>
         </div>

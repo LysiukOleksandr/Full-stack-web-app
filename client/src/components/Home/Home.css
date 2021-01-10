@@ -2,10 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
     max-width: 320px;
     height: 32px;
-    padding-top: 50px;
 }
 
 .articles {
@@ -23,3 +22,8 @@
     margin-top: 150px;
 }
 
+@media screen and(max-width:600px){
+    .home-menu{
+        border: 2px solid orange;
+    }
+}

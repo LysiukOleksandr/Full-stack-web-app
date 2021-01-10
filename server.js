@@ -25,7 +25,7 @@ app.use('/auth', authRoutes)
 app.use('/user', userRoutes)
 app.use('/article', articleRoutes)
 
-mongoose.connect('mongodb+srv://oleksandr:oleksandr1@authapp.3wxyv.mongodb.net/oleksandr?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

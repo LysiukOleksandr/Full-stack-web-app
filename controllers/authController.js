@@ -14,9 +14,7 @@ module.exports.login = async (req, res) => {
     try {
         const candidate = await User.findOne({email: req.body.email})
         if (candidate) {
-
             if (!candidate.isVerified) {
-
                 res.status(409).json({
                     message: 'Access is denied. Please, confirm your email.'
                 })
@@ -31,6 +29,11 @@ module.exports.login = async (req, res) => {
                     user: {
                         id: candidate._id,
                         email: candidate.email,
+                        name: candidate.name,
+                        surname: candidate.surname,
+                        birthday: candidate.birthday,
+                        userPhoto: candidate.userPhoto,
+                        userResume: candidate.userResume,
                         isAuth: true
                     }
                 })

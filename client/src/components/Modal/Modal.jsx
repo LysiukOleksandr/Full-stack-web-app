@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, Modal, Tabs} from "antd";
 import {useDispatch} from 'react-redux'
-import {fetchArticles, uploadArticle} from "../../redux/actions/articleActionsCreator";
+import {uploadArticle} from "../../redux/actions/articleActionsCreator";
 import TextEditor from "../TextEditor/TextEditor";
 
 const {TabPane} = Tabs;

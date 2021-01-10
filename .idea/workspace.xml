@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9dbc551-0795-4a9f-a7dc-900fd08acc30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Articles/Articles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Articles/Articles.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Preloader/Preloader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Preloader/Preloader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ArticleDetails/ArticleDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ArticleDetails/ArticleDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Forgot/Forgot.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Forgot/Forgot.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SearchInput/SearchInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SearchInput/SearchInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SortArticle/SortArticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SortArticle/SortArticle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/actions/articleActionsCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/actions/articleActionsCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/actions/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/actions/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/reducers/articleReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/reducers/articleReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/User/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/User/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/actions/userActionsCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/actions/userActionsCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +53,9 @@
       <recent name="C:\Users\olysi\OneDrive\Рабочий стол\My Projects\AuthApp\authapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\olysi\OneDrive\Рабочий стол\My Projects\AuthApp\authapp\client\src\components" />
       <recent name="C:\Users\olysi\OneDrive\Рабочий стол\My Projects\AuthApp\authapp" />
+      <recent name="C:\Users\olysi\OneDrive\Рабочий стол\My Projects\AuthApp\authapp\backend" />
+      <recent name="C:\Users\olysi\OneDrive\Рабочий стол\My Projects\AuthApp\authapp\client\src\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -108,7 +109,7 @@
       <workItem from="1609944291472" duration="302000" />
       <workItem from="1609944993229" duration="25000" />
       <workItem from="1610221566699" duration="7790000" />
-      <workItem from="1610285421607" duration="2841000" />
+      <workItem from="1610285421607" duration="9815000" />
     </task>
     <servers />
   </component>

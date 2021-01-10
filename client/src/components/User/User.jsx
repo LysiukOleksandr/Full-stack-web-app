@@ -16,13 +16,14 @@ const User = () => {
     const downloadResume = () => {
         dispatch(downloadUserResume())
     }
+
     return (
         <div className='user'>
             {user.isAuth ? <div className="user__wrapper">
                 <div className="user__avatar">
                     <Image
                         width={200}
-                        src={user.userPhoto ? 'http://localhost:8000/' + user.userPhoto : 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png'}
+                        src={user.userPhoto && !user.userPhoto === {} ? 'http://localhost:8000/' + user.userPhoto : 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png'}
                     />
 
                 </div>

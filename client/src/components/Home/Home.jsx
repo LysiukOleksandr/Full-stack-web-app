@@ -7,7 +7,7 @@ import {fetchArticles} from "../../redux/actions/articleActionsCreator";
 import SearchInput from "../SearchInput/SearchInput";
 import SortArticle from "../SortArticle/SortArticle";
 import Articles from "../Articles/Articles";
-import { Empty } from 'antd';
+import {Empty} from 'antd';
 
 const Home = () => {
 
@@ -37,6 +37,7 @@ const Home = () => {
         dispatch(fetchArticles(currentPage, limit, inputValue, sort))
     }, [sort, limit, currentPage])
 
+
     return (
         <div className='home'>
             <DrawerMenu/>
@@ -46,11 +47,11 @@ const Home = () => {
                 <SortArticle onChangeSort={onChangeSort}/>
             </div>
             {articles.length === 0 ? (
-                    <div className='empty'>
-                <Empty/>
-                    </div>
-            ):(
-                <Articles articles={articles} isFetching={isFetching} />
+                <div className='empty'>
+                    <Empty/>
+                </div>
+            ) : (
+                <Articles articles={articles} isFetching={isFetching}/>
             )}
 
             <div className="pagination">

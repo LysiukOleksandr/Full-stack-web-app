@@ -1,3 +1,7 @@
 .forgot{
     padding-top: 50px;
 }
+
+.forgot .ant-input-affix-wrapper{
+    width: 230px;
+}

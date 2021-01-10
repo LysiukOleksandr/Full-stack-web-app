@@ -1,6 +1,6 @@
 import React from 'react'
 import './ArticleDetails.css'
-import {Image, Tabs, Typography} from "antd";
+import {Tabs} from "antd";
 import axios from "axios";
 import {setMessage} from "../../redux/actions/articleActionsCreator";
 import {useDispatch} from "react-redux";
@@ -31,8 +31,8 @@ const ArticleDetails = ({match}) => {
     return (
         <div className='article-details'>
             <Tabs defaultActiveKey="1" centered>
-                   {article && Object.keys(article.languages).map((tab, i) => (
-                        <TabPane tab={tab} key={`${tab}_${i}`} disabled={!article.languages[tab].title}>
+                {article && Object.keys(article.languages).map((tab, i) => (
+                    <TabPane tab={tab} key={`${tab}_${i}`} disabled={!article.languages[tab].title}>
                         <ArticleDetailsTab {...article.languages[tab]} image={article.image}/>
                     </TabPane>
                 ))}

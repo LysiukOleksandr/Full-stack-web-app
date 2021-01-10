@@ -92,7 +92,7 @@ const Reset = () => {
                     />
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
+                    <Button type="primary" htmlType="submit" className="login-form-button" style={{width: '200px'}}>
                         Change password
                     </Button>
                 </Form.Item>

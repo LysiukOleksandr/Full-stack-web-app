@@ -31,3 +31,10 @@
 .user__link{
     color: #fff;
 }
+
+@media (max-width:600px){
+   .user{
+       margin: 0;
+   }
+
+}

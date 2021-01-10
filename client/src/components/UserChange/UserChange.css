@@ -1,11 +1,19 @@
-.user-change__button{
+.user-change__button {
     margin-top: 10px;
 }
 
-.user-change__upload-photo{
+.user-change__upload-photo {
     margin-top: 20px;
 }
 
-.user-change__resume{
+.user-change__resume {
     margin-bottom: 20px;
+}
+
+
+@media (max-width: 500px) {
+    .user-change {
+        padding: 10px 10px 0 10px;
+    }
+
 }

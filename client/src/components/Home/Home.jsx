@@ -42,9 +42,12 @@ const Home = () => {
         <div className='home'>
             <DrawerMenu/>
             <div className="home-menu">
-                <SearchInput sort={sort} limit={limit} onChangeInputValue={onChangeInputValue}
+                <SearchInput className='home-menu__search' sort={sort} limit={limit}
+                             onChangeInputValue={onChangeInputValue}
                 />
-                <SortArticle onChangeSort={onChangeSort}/>
+                <div className="home-menu__sort">
+                    <SortArticle onChangeSort={onChangeSort}/>
+                </div>
             </div>
             {articles.length === 0 ? (
                 <div className='empty'>

@@ -19,7 +19,8 @@ const SortArticle = ({onChangeSort}) => {
 
     return (
         <div className='sort-article'>
-            <Select defaultValue="Sort by" style={{width: 150}} onChange={handleChange}>
+            <Select defaultValue="Sort by" style={{width: 150}}
+                    onChange={handleChange}>
                 {sortBy && sortBy.map((option, i) => (
                     <Option key={`${option.value}_${i}`} value={option.value}>{option.description}</Option>
                 ))}

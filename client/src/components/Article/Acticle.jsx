@@ -14,7 +14,8 @@ const Article = ({_id: id, languages, image}) => {
         <div className='article'>
             <Link to={`/article/${id}`}>
                 <Card
-                    style={{width: 500}}
+                    // style={{width: 500}}
+                    className='article__card'
                     cover={
                         <img
                             alt="example"

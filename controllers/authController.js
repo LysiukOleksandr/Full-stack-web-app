@@ -10,6 +10,29 @@ const signToken = (id) => {
     })
 }
 
+const sendMail = async (url, user, subject, html) => {
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'edgarstone.official@gmail.com',
+            pass: 'edgar1212'
+        }
+    })
+
+    let info = await transporter.sendMail({
+        from: 'EdgarStore.corp',
+        to: user,
+        subject: subject,
+        html: html
+    }, (err) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log('Email has been sent')
+    })
+}
+
+
 module.exports.login = async (req, res) => {
     try {
         const candidate = await User.findOne({email: req.body.email})
@@ -75,29 +98,14 @@ module.exports.register = async (req, res) => {
             const token = signToken(user._id)
             const url = `http://localhost:8000/auth/verify?id=${token}`
 
-            let transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: 'edgarstone.official@gmail.com',
-                    pass: 'edgar1212'
-                }
-            })
-
-            let info = await transporter.sendMail({
-                from: 'EdgarStore.corp',
-                to: user.email,
-                subject: 'Click the button, if you want to verify your account.',
-                html: `
+            const html = `
         <h3>Click the button below:</h3>
         <a href="${url}" target="_blank">Verify</a>
         `
-            }, (err) => {
-                if (error) {
-                    console.log(err)
-                }
-                console.log('Email has been sent')
-                // transporter.close()
-            })
+
+            const subject = 'Click the button, if you want to verify your account.'
+            await sendMail(url, req.body.email, subject, html)
+
         }
     } catch (e) {
         console.log(e)
@@ -133,7 +141,7 @@ module.exports.verifyPassword = (req, res) => {
         }
     } else {
         res.status(403).json({
-            messsage: 'Something went wrong. Please, try again.'
+            message: 'Something went wrong. Please, try again.'
         })
     }
 }
@@ -150,32 +158,13 @@ module.exports.forgotPassword = async (req, res) => {
         const resetToken = crypto.randomBytes(32).toString('hex');
         const url = `http://localhost:3000/reset/${resetToken}`
 
-        let transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'edgarstone.official@gmail.com',
-                pass: 'edgar1212'
-            }
-        })
-
-        let info = await transporter.sendMail({
-            from: 'EdgarStore.corp',
-            to: req.body.email,
-            subject: 'Click the button, if you want reset your password.',
-            html: `
+        const subject = 'Click the button, if you want reset your password.'
+        const html = `
         <h3>Click the link below:</h3>
         <a href="${url}" target="_blank">Reset</a>
         `
-        }, (err) => {
-            if (error) {
-                console.log(err)
-            } else {
-                res.status(200).json({
-                    message: 'Email has been sent. Please, check your email.'
-                })
-            }
-            // transporter.close()
-        })
+
+        await sendMail(url, req.body.email, subject, html)
 
         await User.findOne({email: req.body.email}).updateOne({passwordResetToken: resetToken}).select('passwordResetToken')
         res.status(200).json({
